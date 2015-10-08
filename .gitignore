@@ -1,0 +1,69 @@
+/app
+/documents/archive/
+/servers.json
+.sass-cache
+
+#############
+# WordPress #
+#############
+*.log
+.htaccess
+sitemap.xml
+sitemap.xml.gz
+wp-config.php
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/wp-cache-config.php
+wp-content/plugins/hello.php
+/readme.html
+/license.txt
+
+##############
+# Node & NPM #
+##############
+node_modules
+logs
+*.log
+npm-debug.log*
+
+###############
+# Dreamweaver #
+###############
+_notes
+dwsync.xml
+
+###########
+#   OSX   #
+###########
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+###############
+# SublimeText #
+###############
+# cache files for sublime text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+sftp-config.json

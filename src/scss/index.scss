@@ -16,7 +16,6 @@ body { background: #444; }
 img { max-width: 100%; }
 .content-wrapper {
    margin: 0 auto;
-   // max-width: 600px;
    min-height: 100vh;
    text-align: center;
    background: #eee;
@@ -69,10 +68,21 @@ img { max-width: 100%; }
 .st-header--content {
    height: 100%;
    position: absolute;
+   text-align: center;
    top: 0;left: 0;
    width: 100%;
-
+   font-size: 6.5vw;
+   & > * { margin: 0 auto; }
+   background: yellow;
 }
+.st-header--message {
+  color: $tan-lite;
+  font-size: 0.6em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.st-header--release {}
+.st-header--learn {}
 .st-main--img {
    height: 100%;
    background-image: url('../img/young-couple-outdoors.jpg');
@@ -154,4 +164,22 @@ img { max-width: 100%; }
    #footer {
       padding: 20px 70px;
    }
+}
+/*************
+  BRAND LOGO
+*************/
+.st-brand {
+  box-sizing: border-box;
+  padding: 15px;
+  text-align: center;
+  background: $tan-lite;
+  border: 10px solid $tan-dark;
+  font-size: 1rem;
+  max-width: 50%;
+  width: 50%;
+}
+.st-brand--243 {
+  box-sizing: content-box;
+  width: 100%;
+  img { max-width: 100%;width: 100%; }
 }

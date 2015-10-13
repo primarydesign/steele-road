@@ -10,6 +10,15 @@ $tan-2: #E2DDD1;
 $tan-3: #D3CCB9;
 $tan-4: #C5BDA3;
 
+%pseudo {
+  content: '';
+  height: 100%;
+  position: absolute;
+  top: 50%;left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+}
+
 * {
   box-sizing: border-box;
   margin:0;padding:0;
@@ -50,6 +59,25 @@ img { max-width: 100%; }
   width: 100%;
 }
 
+/*************
+BRAND LOGO
+*************/
+.st-brand {
+  box-sizing: border-box;
+  padding: 15px;
+  text-align: center;
+  background: $tan-3;
+  border: 7px solid $brown;
+  font-size: 1rem;
+  max-width: 50%;
+  width: 50%;
+}
+.st-brand--243 {
+  box-sizing: content-box;
+  width: 100%;
+  img { max-width: 100%;width: 100%; }
+}
+
 /**************
 MAIN HEADER
 **************/
@@ -61,34 +89,95 @@ MAIN HEADER
   background-size: cover;
 }
 .st-header {
-  background: red;
+  background: $blue;
   max-height: 90vh;
   overflow: hidden;
+  position: relative;
 }
 .st-header--block {
   display: block;
   height: 0;
   padding-bottom: 200%;
-  position: relative;
 }
 .st-header--content {
-  height: 100%;
+  backface-visibility: hidden;
+  display: table;
+  height: auto;
+  margin: 0;
   position: absolute;
   text-align: center;
-  top: 0;left: 0;
+  top: 50%;left: 0;
+  transform: translateY(-50%);
   width: 100%;
-  font-size: 6.5vw;
-  & > * { margin: 0 auto; }
-  background: yellow;
+  background: $blue;
+  font-size: 4vw;
+  & > * {
+    color: $tan-3;
+    margin: 0 auto;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  @media (min-width: 800px) {
+    font-size: 1.5vw;
+  }
+}
+.st-header--brand {
+  margin-bottom: 1rem;
+  width: 40%;
+  @media (min-width: 800px) {
+    width: 50%;
+  }
 }
 .st-header--message {
-  color: $tan-3;
   font-size: 0.6em;
   letter-spacing: 1px;
-  text-transform: uppercase;
+  margin-bottom: 1rem;
 }
-.st-header--release {}
-.st-header--learn {}
+.st-header--release {
+  font-size: 2.5em;
+  line-height: 1.1em;
+  margin-bottom: 1rem;
+  i {
+    color: $tan-3;
+    font-style: normal;
+    font-size: 1.5em;
+  }
+  @media (min-width: 800px) {
+    margin-bottom: 3rem;
+  }
+}
+.st-header--learn {
+  border: 1px solid rgba($tan-3, 0.5);
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 2% 0;
+  position: relative;
+  transition: all 200ms ease-in-out;
+  transform: scale(1);
+  width: 50%;
+  &:before {
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0%;left: 0;
+    transform: translateY(110%);
+    transition: all 200ms ease-in-out;
+    width: 100%;
+    z-index: -1;
+    background-color: rgba($tan-3, 0.9);
+  }
+  i { color:$tan-3;font-style:normal; }
+}
+.st-header--learn:hover {
+  color: rgba($blue, 1);
+  &:before {
+    transform: translateY(0%);
+  }
+}
 .st-main--img {
   height: 100%;
   background-image: url('../img/young-couple-outdoors.jpg');
@@ -166,7 +255,7 @@ FOOTER
   font-weight: 300;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 799px) {
   .st-header {
     display: block;
     width: 100%;
@@ -191,22 +280,4 @@ FOOTER
       width: 50%;
     }
   }
-}
-/*************
-BRAND LOGO
-*************/
-.st-brand {
-  box-sizing: border-box;
-  padding: 15px;
-  text-align: center;
-  background: $tan-3;
-  border: 10px solid $brown;
-  font-size: 1rem;
-  max-width: 50%;
-  width: 50%;
-}
-.st-brand--243 {
-  box-sizing: content-box;
-  width: 100%;
-  img { max-width: 100%;width: 100%; }
 }

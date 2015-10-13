@@ -1,6 +1,6 @@
 root = true
 [**/*.{html,php,js,css,scss}]
 indent_style: tab
-indent_size: 3
+indent_size: 2
 insert_final_newline = false;
 trim_trailing_whitespace = true;

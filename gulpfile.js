@@ -42,10 +42,13 @@ gulp.task('font', function(){
 		.pipe(browser.stream());
 });
 gulp.task('page', function(){
-   return gulp.src('./src/*.{html,php}')
-      .pipe(_.htmlmin({collapseWhitespace: true}))
-      .pipe(gulp.dest('./app/'))
-      .pipe(browser.stream());
+  gulp.src('./src/*.php')
+     .pipe(gulp.dest('./app/'))
+     .pipe(browser.stream());
+  return gulp.src('./src/*.html')
+    .pipe(_.htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('./app/'))
+    .pipe(browser.stream());
 })
 gulp.task('serve', function(){
    browser.init({

@@ -38,21 +38,22 @@
 		$('.st-form--field').each(function(field) {
 			clearance += validate.call($(this));
 		});
-		$(this).closest('form').submit();
+		if (clearance === 0) $('#contact-form').submit();
 	});
 	/* submit form */
 	$('#contact-form').on('submit', function(event) {
 		event.preventDefault();
-		$('.submit').prop('disabled',true).val("SENDING");
+		$('#submit').prop('disabled',true).val("SENDING");
 		$.ajax({
 			type: 'POST',
 			url: 'submit.php',
 			data: $(this).serialize(),
 			success: function (data) {
-        
+				console.log(data);
+				$('#submit').val('THANK YOU');
     	},
 			error: function () {
-        $('.submit').removeAttr('disabled');
+        $('#submit').removeAttr('disabled');
     	}
 		});
 	});

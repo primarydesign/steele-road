@@ -37,6 +37,7 @@ if (isset($_POST)) {
 
 		if( mail($address, $subject, $message) ) {
 			echo "success";
+			echo $_SERVER['HTTP_HOST'];
 		} else {
 			echo "failure:mailing";
 		}

@@ -91,10 +91,19 @@ MAIN HEADER
   background-size: cover;
 }
 .st-header {
-  background: $blue;
   max-height: 90vh;
   overflow: hidden;
   position: relative;
+  background-color: $blue;
+
+  &:before {
+    @extend %pseudo;
+    opacity: 0.1;
+    background-image: url(../img/background-243-cropped.svg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
 }
 .st-header--block {
   display: block;
@@ -111,7 +120,7 @@ MAIN HEADER
   top: 50%;left: 0;
   transform: translateY(-50%);
   width: 100%;
-  background: $blue;
+  // background: $blue;
   font-size: 4vw;
   & > * {
     color: $tan-3;

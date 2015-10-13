@@ -2,11 +2,21 @@
 
 	$('.modal-close').on('click', function() {
 		var target = $('#' + $(this).data('close'));
+		$(window).disablescroll('undo');
 		target.closest('.modal-wrapper').removeClass('is-open').addClass('is-closed');
+		target.closest('.modal-wrapper').velocity(
+			"fadeOut", {
+				duration: 200,
+			});
 	});
 	$('.modal-open').on('click', function() {
 		var target = $('#' + $(this).data('open'));
+		$(window).disablescroll();
 		target.closest('.modal-wrapper').removeClass('is-closed').addClass('is-open');
+		target.closest('.modal-wrapper').velocity(
+			"fadeIn", {
+				duration: 200,
+			});
 	});
 
 	function validate() {

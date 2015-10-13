@@ -231,8 +231,11 @@ FOOTER
   padding: 100px 0;
   text-align: center;
   background-color: $blue;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   * { opacity: 0.8; }
+  @media (min-width: 800px) {
+    font-size: 1.2rem;
+  }
 }
 .footer--heading {
   font-size: 1.3em;
@@ -247,7 +250,7 @@ FOOTER
   margin: 10px 0 15px;
 }
 .footer--contact--address {
-  i { display: inline-block;margin: 0 .5em; }
+  i { display: inline-block;margin: 0 .5em;font-style: normal; }
 }
 .footer--contact--email {
   display: block;
@@ -272,7 +275,7 @@ FOOTER
     width: 100%;
   }
   #footer {
-    padding: 20px 70px;
+    padding: 20px 20px;
   }
 }
 @media (min-width: 1000px) {
@@ -288,15 +291,13 @@ FOOTER
 CONTACT FORM
 ***************/
 .modal-wrapper {
-  display: table;
+  display: none;
   height: 100vh;
   position: fixed;
   top: 0;left: 0;
   vertical-align: middle;
   width: 100vw;
 }
-.modal-wrapper.is-closed { display: none; }
-.modal-wrapper.is-open { display: block; }
 #contact-form {
   position: absolute;
   top: 50%;left: 50%;

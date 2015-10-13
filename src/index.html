@@ -21,7 +21,7 @@
             </div>
             <p class="st-header--message">Brand New Luxury Apartments<br/>Coming to West Hartford</p>
             <p class="st-header--release">Spring<br/><i>2016</i></p>
-            <a id="learn-more" class="st-header--learn">+ Learn More</a>
+            <a id="learn-more" class="st-header--learn modal-open" data-open="contact-form">+ Learn More</a>
           </div>
         </div>
       </header>
@@ -60,9 +60,9 @@
       </address>
       <p class="footer--legal">&#169; 2015 Metro Realty. All Rights Reserved.</p>
     </footer>
-    <div class="modal-wrapper">
+    <div class="modal-wrapper is-closed">
       <form id="contact-form" class="st-form" novalidate>
-        <a class="modal-close">Close</a>
+        <a class="modal-close" data-close="contact-form">Close</a>
         <h2 class="st-form--heading">Interested?</h2>
         <label class="st-form--label">
           <input type="text" class="st-form--field" name="firstname" id="firstname" placeholder="FIRST NAME" required/>
@@ -71,7 +71,7 @@
           <input type="text" class="st-form--field" name="lastname" id="lastname" placeholder="LAST NAME" required/>
         </label>
         <label class="st-form--label">
-          <input type="text" class="st-form--field" name="email" id="email" placeholder="EMAIL" required/>
+          <input type="text" class="st-form--field" data-pattern="email" name="email" id="email" placeholder="EMAIL" required/>
         </label>
         <span class="submit-wrapper">
           <input type="submit" class="st-form--submit" id="submit" value="SEND"/>
@@ -84,5 +84,7 @@
       </form>
     </div>
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="assets/js/index.js"></script>
 </body>
 </html>

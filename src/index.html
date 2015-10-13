@@ -21,7 +21,7 @@
             </div>
             <p class="st-header--message">Brand New Luxury Apartments<br/>Coming to West Hartford</p>
             <p class="st-header--release">Spring<br/><i>2016</i></p>
-            <a class="st-header--learn" data-content="+ Learn More">+ Learn More</a>
+            <a id="learn-more" class="st-header--learn">+ Learn More</a>
           </div>
         </div>
       </header>
@@ -61,18 +61,20 @@
       <p class="footer--legal">&#169; 2015 Metro Realty. All Rights Reserved.</p>
     </footer>
     <div class="modal-wrapper">
-      <form id="contact-form" class="st-form">
+      <form id="contact-form" class="st-form" novalidate>
+        <a class="modal-close">Close</a>
+        <h2 class="st-form--heading">Interested?</h2>
         <label class="st-form--label">
-          <input type="text" class="st-form--field" name="firstname" id="firstname" required/>
+          <input type="text" class="st-form--field" name="firstname" id="firstname" placeholder="FIRST NAME" required/>
         </label>
         <label class="st-form--label">
-          <input type="text" class="st-form--field" name="lastname" id="lastname" required/>
+          <input type="text" class="st-form--field" name="lastname" id="lastname" placeholder="LAST NAME" required/>
         </label>
         <label class="st-form--label">
-          <input type="text" class="st-form--field" name="email" id="email" required/>
+          <input type="text" class="st-form--field" name="email" id="email" placeholder="EMAIL" required/>
         </label>
         <span class="submit-wrapper">
-          <input type="submit" id="st-form--submit" value="SEND"/>
+          <input type="submit" class="st-form--submit" id="submit" value="SEND"/>
         </span>
         <div class="st-form--brand st-brand">
           <div class="st-brand--243">

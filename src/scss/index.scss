@@ -3,7 +3,7 @@
 
 $large: "(min-width: 1000px)";
 $medium-large: "(min-width: 800px)";
-$blue: #172334;
+$blue: #1E3044;
 $orange: #BB7A1A;
 $green: #55761A;
 $brown: #71675D;
@@ -97,6 +97,7 @@ input:focus { outline: none; }
   background-repeat: no-repeat;
   background-size: cover;
   font-size: 4vw;
+  text-transform: uppercase;
   @media #{$medium-large} {
     height: calc(150vw/3);
     min-height: 0 !important;
@@ -127,7 +128,7 @@ input:focus { outline: none; }
   margin-bottom: 1rem;
 }
 .st-header--release {
-  font-size: 2.0em;
+  font-size: 2.5em;
   font-weight: 300;
   line-height: 1.3em;
   margin-bottom: 2rem;
@@ -237,13 +238,13 @@ FOOTER
 }
 .footer--heading {
   font-size: 1.3em;
-  font-weight: 300;
+  font-weight: 400;
   text-transform: uppercase;
 }
 .footer--contact {
   font-size: 1em;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.5px;
   margin: 10px 0 15px;
 }
@@ -255,7 +256,7 @@ FOOTER
 }
 .footer--legal {
   font-size: 0.8em;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 @media (max-width: 799px) {

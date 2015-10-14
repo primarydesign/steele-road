@@ -1,6 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
 @import "normalize.scss";
 
+$large: "(min-width: 1000px)";
+$medium-large: "(min-width: 800px)";
 $blue: #172334;
 $orange: #BB7A1A;
 $green: #55761A;
@@ -18,25 +20,39 @@ $tan-4: #C5BDA3;
   transform: translate(-50%,-50%);
   width: 100%;
 }
+%background {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/**********
+  RESETS
+**********/
 
 * {
   box-sizing: border-box;
   margin:0;padding:0;
-  color: #ffffff;
+  color: $tan-3;
   font-family: 'Open Sans', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-decoration: none;
 }
+
 body { background: #444; }
 img { max-width: 100%; }
 input:focus { outline: none; }
+
+/********************
+  LAYOUT STRUCTURE
+********************/
+
 .content-wrapper {
   margin: 0 auto;
   min-height: 100vh;
   text-align: center;
   background: #eee;
 }
-
 .st-row {
   display: table;
   height: auto;
@@ -61,100 +77,67 @@ input:focus { outline: none; }
   width: 100%;
 }
 
-/*************
-BRAND LOGO
-*************/
-.st-brand {
-  box-sizing: border-box;
-  padding: 15px;
-  text-align: center;
-  background: $tan-3;
-  border: 7px solid $brown;
-  font-size: 1rem;
-  max-width: 50%;
-  width: 50%;
-}
-.st-brand--243 {
-  box-sizing: content-box;
-  width: 100%;
-  img { max-width: 100%;width: 100%; }
-}
-
-/**************
-MAIN HEADER
-**************/
-.st-main--img {
-  height: 100%;
-  background-image: url('../img/young-couple-outdoors.jpg');
-  background-position: center;
+/***************
+  MAIN HEADER
+***************/
+.st-main { font-size: 0; }
+.st-header {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: auto;
+  min-height: 90vh;
+  position: relative;
+  width: calc(100%);
+  background-color: $blue;
+  background-image: url(../img/background-243-cropped.svg);
+  background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
-}
-.st-header {
-  max-height: 90vh;
-  overflow: hidden;
-  position: relative;
-  background-color: $blue;
-
-  &:before {
-    @extend %pseudo;
-    opacity: 0.1;
-    background-image: url(../img/background-243-cropped.svg);
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
+  font-size: 4vw;
+  @media #{$medium-large} {
+    height: calc(150vw/3);
+    min-height: 0 !important;
+    width: calc(100%/3);
+    font-size: 1.4vw;
   }
-}
-.st-header--block {
-  display: block;
-  height: 0;
-  padding-bottom: 200%;
 }
 .st-header--content {
-  backface-visibility: hidden;
-  display: table;
+  display: block;
   height: auto;
-  margin: 0;
-  position: absolute;
-  text-align: center;
-  top: 50%;left: 0;
-  transform: translateY(-50%);
+  padding: 60px 0;
+  position: relative;
   width: 100%;
-  // background: $blue;
-  font-size: 4vw;
-  & > * {
-    color: $tan-3;
-    margin: 0 auto;
-    font-weight: 300;
-    text-transform: uppercase;
-  }
-  @media (min-width: 800px) {
-    font-size: 1.5vw;
+  @media #{$medium-large} {
+    padding: 0 !important;
   }
 }
 .st-header--brand {
   margin-bottom: 1rem;
   width: 40%;
-  @media (min-width: 800px) {
+  @media #{$medium-large} {
     width: 50%;
   }
 }
 .st-header--message {
-  font-size: 0.6em;
-  letter-spacing: 1px;
+  color: $tan-3;
+  font-size: 1em;
   margin-bottom: 1rem;
 }
 .st-header--release {
-  font-size: 2.5em;
-  line-height: 1.1em;
-  margin-bottom: 1rem;
+  font-size: 2.0em;
+  font-weight: 300;
+  line-height: 1.3em;
+  margin-bottom: 2rem;
   i {
     color: $tan-3;
     font-style: normal;
-    font-size: 1.5em;
+    font-size: 1.75em;
   }
-  @media (min-width: 800px) {
-    margin-bottom: 3rem;
+  @media #{$medium-large} {
+    margin-bottom: 25px;
   }
 }
 .st-header--learn {
@@ -170,6 +153,7 @@ MAIN HEADER
   transition: all 200ms ease-in-out;
   transform: scale(1);
   width: 50%;
+  i { color:$tan-3;font-style:normal; }
   &:before {
     content: '';
     height: 100%;
@@ -181,14 +165,18 @@ MAIN HEADER
     z-index: -1;
     background-color: rgba($tan-3, 0.9);
   }
-  i { color:$tan-3;font-style:normal; }
-}
-.st-header--learn:hover {
-  color: rgba($blue, 1);
-  &:before {
-    transform: translateY(0%);
+  &:hover {
+    color: rgba($blue, 1);
+    &:before {
+      transform: translateY(0%);
+    }
   }
 }
+
+/**************
+  MAIN IMAGE
+**************/
+
 .st-main--img {
   height: 100%;
   background-image: url('../img/young-couple-outdoors.jpg');
@@ -196,6 +184,7 @@ MAIN HEADER
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 /**************
 FEATURETTES
 **************/
@@ -242,7 +231,7 @@ FOOTER
   background-color: $blue;
   font-size: 0.8rem;
   * { opacity: 0.8; }
-  @media (min-width: 800px) {
+  @media #{$medium-large} {
     font-size: 1.0rem;
   }
 }
@@ -270,13 +259,6 @@ FOOTER
 }
 
 @media (max-width: 799px) {
-  .st-header {
-    display: block;
-    width: 100%;
-  }
-  .st-header--block {
-    padding-bottom: 150%;
-  }
   .st-main--img {
     display: block;
     height: 0;
@@ -386,7 +368,7 @@ CONTACT FORM
   padding: 6px;
   width: 30%;
   border: none;
-  @media (min-width: 800px) {
+  @media #{$medium-large} {
     width: 25%;
   }
 }
@@ -398,4 +380,97 @@ CONTACT FORM
   color: $brown;
   font-size: .8rem;
   text-transform: uppercase;
+}
+@-moz-document url-prefix() {
+  .st-row { position: relative; }
+  .st-main:before, .st-featurette--img:before {
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: calc(100% - (100% / 3);
+    background: red;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .st-main:before {
+    // position: relative;
+    background-image: url('../img/young-couple-outdoors.jpg');
+    background-size: 100% 100%;
+    right: 0;
+    width: 100%;
+  }
+}
+@media #{$medium-large} {
+  @-moz-document url-prefix() {
+    .st-main:before {
+      width: calc(100% - (100% / 3);
+    }
+  }
+}
+
+[class*="st-featurette__"] {
+  position: relative;
+}
+.st-featurette--image {
+  display: block;
+  padding-bottom: calc(100%/3);
+  position: relative;
+  width: calc((100%/3)*2);
+  z-index: 1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  &.m-left { float: left; }
+  &.m-right { float: right; }
+  &.m-square { padding-bottom: calc(200%/3); }
+}
+.st-featurette__outdoors {
+  background-color: $orange;
+  .st-featurette--image {
+    background-image: url('../img/outdoor-swimming-pool.jpg');
+  }
+  &:before {
+    content: '';
+    height: 50%;
+    position: absolute;
+    top: 0;right: 0;
+    width: 100%;
+    z-index: 0;
+    background: $tan-4;
+  }
+}
+.st-featurette__bbsquare {
+  background-color: $blue;
+  .st-featurette--image {
+    background-image: url('../img/Blue-Back-Square.jpg');
+  }
+}
+.st-featurette__kitchen {
+  background-color: $green;
+  .st-featurette--image {
+    background-image: url('../img/stainless-steel-kitchen.jpg');
+  }
+}
+
+.st-main:before {
+  box-sizing: border-box;
+  content: '';
+  display: none;
+  height: 100%;
+  position: absolute;
+  top: 0;right: 0;
+  transform: translate(0,0);
+  width: calc(200%/3);
+  z-index: 0;
+  background: red;
+  background-image: url('../img/young-couple-outdoors.jpg');
+  background-clip: content-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media #{$medium-large} {
+    display: block;
+  }
 }

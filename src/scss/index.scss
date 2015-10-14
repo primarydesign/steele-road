@@ -80,7 +80,7 @@ input:focus { outline: none; }
 /***************
   MAIN HEADER
 ***************/
-.st-main { font-size: 0; }
+.st-main { position: relative; font-size: 0; }
 .st-header {
   display: flex;
   flex-flow: column wrap;
@@ -391,34 +391,6 @@ CONTACT FORM
   font-size: .8rem;
   text-transform: uppercase;
 }
-@-moz-document url-prefix() {
-  .st-row { position: relative; }
-  .st-main:before, .st-featurette--img:before {
-    content: '';
-    height: 100%;
-    position: absolute;
-    top: 0;
-    width: calc(100% - (100% / 3);
-    background: red;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .st-main:before {
-    // position: relative;
-    background-image: url('../img/young-couple-outdoors.jpg');
-    background-size: 100% 100%;
-    right: 0;
-    width: 100%;
-  }
-}
-@media #{$medium-large} {
-  @-moz-document url-prefix() {
-    .st-main:before {
-      width: calc(100% - (100% / 3);
-    }
-  }
-}
 
 [class*="st-featurette__"] {
   position: relative;
@@ -474,7 +446,6 @@ CONTACT FORM
   transform: translate(0,0);
   width: calc(200%/3);
   z-index: 0;
-  background: red;
   background-image: url('../img/young-couple-outdoors.jpg');
   background-clip: content-box;
   background-position: center;

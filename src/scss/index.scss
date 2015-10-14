@@ -7,8 +7,8 @@ $blue: #172334;
 $orange: #BB7A1A;
 $green: #55761A;
 $brown: #71675D;
-$tan-1: #EEEBE3;
-$tan-2: #E2DDD1;
+$tan-1: #F5F4EE;
+$tan-2: #ECEADE;
 $tan-3: #D3CCB9;
 $tan-4: #C5BDA3;
 
@@ -288,6 +288,7 @@ CONTACT FORM
   top: 0;left: 0;
   vertical-align: middle;
   width: 100vw;
+  z-index: 50;
 }
 #contact-form {
   position: absolute;
@@ -297,14 +298,23 @@ CONTACT FORM
 #contact-form {
   box-sizing: border-box;
   display: inline-block;
-  max-width: 500px;
+  max-height: 100vh;
+  max-width: 100vw;
   overflow-y: auto;
   padding: 20px;
 	vertical-align: middle;
   width: 100%;
   background: $tan-1;
-  border: 10px solid $brown;
+  border: 18px solid $brown;
   font-size: 1rem;
+  @media (min-width: 600px) {
+    width: 500px;
+  }
+  @media (max-height: 600px) and (orientation:landscape) {
+    .st-form--brand {
+      display: none;
+    }
+  }
 }
 .st-form--heading {
   color: $blue;
@@ -364,12 +374,12 @@ CONTACT FORM
 }
 .st-form--brand {
   margin: 0 auto;
-  margin-top: 10%;
+  margin-top: 15%;
   padding: 6px;
-  width: 30%;
+  width: 40%;
   border: none;
   @media #{$medium-large} {
-    width: 25%;
+    width: 35%;
   }
 }
 .modal-close {

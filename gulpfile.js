@@ -53,7 +53,11 @@ gulp.task('page', function(){
 gulp.task('serve', function(){
    browser.init({
       server: {baseDir: './app/'},
-      open: (o ? 'external' : false),
+      open: Boolean(argv.u)
+        ? 'ui'
+        : Boolean(argv.o)
+          ? 'local'
+          : false,
       notify: false
    });
 });

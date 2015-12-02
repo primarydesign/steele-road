@@ -40,7 +40,7 @@ $tan-4: #C5BDA3;
 }
 
 body { background: #444; }
-img { max-width: 100%; }
+img { max-width: 100%; height: auto;}
 input:focus { outline: none; }
 
 /********************
@@ -382,6 +382,14 @@ CONTACT FORM
   @media #{$medium-large} {
     width: 35%;
   }
+}
+.st-form--brand .st-brand--243 {
+  height: 0;
+  padding-bottom: calc(100% * (198.875/157.594));
+  width: 100%;
+  background-image: url('../img/logo-243-Steele-Road-bare.svg');
+  background-position: left top;
+  background-size: cover;
 }
 .modal-close {
   cursor: pointer;
